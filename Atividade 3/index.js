@@ -1,17 +1,22 @@
 const port = 8080;
 
-//Express
 const express = require("express");
 const app = express();
+app.use(express.json())
+app.use(express.urlencoded({extended: true}))
 app.set('view engine', 'ejs');
 
-app.get("/index", (request, response) => {
-response.render("index"); //views/index.ejs
+app.get("/", (req, res) => {
+res.render("form");
 });
 
-app.use((request, response, next) => {
-response.status(404).send("<h1>Página não encontrada.</h1>");
-})
+app.post('/app', (req, res) => {
+    const data = {
+        nome: req.body.name,
+        sobrenome: req.body.sobrenome
+    }
+    res.render('cadastro', { data });
+});
 
 app.listen(port, () => {
 console.log(`Servidor funcionando na porta: ${port}`);
