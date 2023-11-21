@@ -15,6 +15,12 @@ app.get("/map", (req, res) => {
 app.get("/sobre", (req, res) => {
     res.render('sobre')
 })
+app.get("/seca", (req, res) => {
+    res.render('not1')
+})
 
+app.get("/moradores", (req, res) => {
+    res.render('not2')
+})
 
 app.listen(8080)

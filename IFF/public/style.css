@@ -7,6 +7,8 @@ body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
+
+
 .cabeca {
     background-color: #D7FFB9;
     text-align: start;
@@ -41,6 +43,7 @@ body {
     background-color: #b6f388;
     margin-top: 25px;
     margin-left: 10px;
+    font-weight: 500;
 }
 
 .cabeca a:hover {
@@ -70,8 +73,94 @@ body {
 }
 
 .noticias{
-    width: 99%;
-    border: 1px solid red;
+    width: 100%;
+    height: 55vh;
     margin: 0 auto;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
     
+}
+
+.noticias .noticia{
+    height: 250px;
+    width: 500px;
+    background-color: #E9FFD8;
+    border-radius: 20px;
+}
+
+.titulo-noticia{
+    width: 100%;
+    height: 40px;
+    background-color: #70B53B;
+    border-radius: 20px 20px 0 0;
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+}
+.noticia img {
+    float: left;
+    height: 84%;
+    border-radius: 0 0 0 20px;
+}
+
+.text-noticia{
+    height: 84%;
+    width: 212px;
+    float: right;
+    font-size: 14px;
+    color: black;
+    font-weight: 500;
+}
+
+.noticias a{
+    text-decoration: none;
+}
+
+.rodape{
+    width: 100%;
+    height: 110px;
+    background-color: #D1EABD;
+    text-align: center;
+    align-items: center;
+
+}
+
+.rodape a {
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+}
+
+.noticias2{
+    width: 100%;
+    height: 730px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.noticia2 {
+    margin-top: 10px;
+    height: 700px;
+    width: 1000px;
+    background-color: #E9FFD8;
+    border-radius: 20px;
+}
+
+.noticia2 img {
+    height: 70%;
+    margin-left: 60px;
+    margin-top: 30px;
+    border-radius: 20px;
+}
+
+.text-noticia2 {
+    text-align: center;
+    margin-top: 30px;
 }
