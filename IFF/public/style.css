@@ -1,0 +1,44 @@
+body {
+    background-color: #F9FFF4;
+    margin: 0px;
+    padding: 0px;
+    font-size: 12pt;
+    border: 1px solid rgba(255, 0, 0, 0);
+}
+
+.cabeca {
+    background-color: #D7FFB9;
+    text-align: start;
+    text-decoration: none;
+    padding: 5px;
+    display: block;
+    float: left;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.cabeca h1 {
+    text-align: start;
+    text-decoration: none;
+    padding: 5px;
+    display: block;
+    float: left;
+    box-sizing: border-box;
+    width: 40%;
+}
+
+.cabeca a {
+    text-align: center;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+    float: left;
+    box-sizing: border-box;
+    width: 15%;
+    color: black;
+    border-radius: 20px;
+}
+
+.cabeca a:hover {
+    box-shadow: 0px 0px 25px 11px rgba(0,0,0,0.1);
+}
