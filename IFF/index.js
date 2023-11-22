@@ -29,7 +29,7 @@ app.get("/moradores", (req, res) => {
 
 app.post('/test', (req, res) => {
     const data = {
-        nome: req.body.name,
+        nome: req.body.nome,
         sobrenome: req.body.sobrenome,
         valor: req.body.valor
     }
