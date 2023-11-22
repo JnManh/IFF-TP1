@@ -6,11 +6,11 @@ app.use(express.static('public'))
 app.get("/", (req, res) => {
     res.render('home')
 })
-app.get("/noticias", (req, res) => {
-    res.render('noticias')
+app.get("/doacao", (req, res) => {
+    res.render('doacao')
 })
-app.get("/map", (req, res) => {
-    res.render('map')
+app.get("/contato", (req, res) => {
+    res.render('contato')
 })
 app.get("/sobre", (req, res) => {
     res.render('sobre')
