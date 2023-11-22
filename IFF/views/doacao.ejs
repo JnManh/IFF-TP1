@@ -11,8 +11,44 @@
 
 <body>
     <%- include ('cabeca')%>
-        <h1>Doação</h1>
-        <%- include ('rodape')%>
+        <form action="/test" method="post">
+            <fieldset>
+            <legend>Doação</legend>
+            <table cellspacing="10">
+            <tbody><tr>
+            <td>
+            <label for="nome">Nome: </label>
+            </td>
+            <td align="left">
+            <input type="text" name="name">
+            </td>
+            <td>
+            <label for="sobrenome">Sobrenome: </label>
+            </td>
+            <td align="left">
+            <input type="text" name="sobrenome">
+            </td>
+            <td>
+            <label for="valor">Escolha o valor: </label>
+            </td>
+            <td align="left">
+            <input type="radio" id="vinte" name="valor" value="R$20,00">
+            <label for="vinte">R$20,00</label><br>
+            <input type="radio" name="valor" value="R$50,00">
+            <label for="cinquenta">R$50,00</label><br>
+            <input type="radio" name="valor" value="R$100,00">
+            <label for="cem">R$100,00</label><br>
+            <label for="outro" name="valor" id="outro">Outro valor:</label>
+            <input type="number">
+            </td>
+            </tr>
+            <td>
+            </tbody></table>
+            <input type="submit">
+            <input type="reset" value="Limpar">
+            </fieldset>
+            </form> 
+    <%- include ('rodape')%>
 </body>
 
 </html>
