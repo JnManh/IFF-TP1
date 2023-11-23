@@ -11,15 +11,21 @@
 
 <body>
     <%- include ('cabeca')%>
-    <form action="/test" method="post">
+    <form action="/result" method="post" class="form">
         <fieldset>
-            <legend>Doação</legend>
-            <label for="nome">Nome completo:</label>
-            <input name="nome" id="nome" type="text" placeholder="Digite o seu nome" required><br>
-            <input name="" id="" type="radio" >
+            <legend>Selecione o valor que deseja doar:</legend>
+            
+            <label for="valor1">R$20,00<input type="radio" id="valor1" name="valor" value="20,00"></label>
+            <br>
+            <label for="valor2">R$50,00<input type="radio" id="valor2" name="valor" value="50,00"></label>
+            <br>
+            <label for="valor3">R$100,00<input type="radio" id="valor3" name="valor" value="100,00"></label>
+            <br>
+            <label for="outro">Outro valor:<br><input type="number" id="outro" name="outro"></label>
+            <br><br>
             <input type="submit" id="1a20">
         </fieldset>
-    </form> 
+      </form>
     <%- include ('rodape')%>
 </body>
 

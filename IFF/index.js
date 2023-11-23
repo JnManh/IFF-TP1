@@ -7,10 +7,6 @@ app.get("/", (req, res) => {
     res.render('home')
 })
 
-app.get("/doacao", (req, res) => {
-    res.render('doacao')
-})
-
 app.get("/contato", (req, res) => {
     res.render('contato')
 })
@@ -27,15 +23,19 @@ app.get("/moradores", (req, res) => {
     res.render('not2')
 })
 
-app.post('/test', (req, res) => {
-    const data = {
-        nome: req.body.nome,
-        sobrenome: req.body.sobrenome,
-        valor: req.body.valor
-    }
-    res.render('form', { data });
+app.get('/doacao', (req, res) => {
+    resultado = ""
+    res.render('doacao', { resultado })
+})
+
+app.post('/result', (req, res) => {
+    let nomeNoForm = req.body.nome
+    let cadastro = {nome: nomeNoForm}
+    console.log(cadastro);
+    console.log('\n'+JSON.stringify(cadastro)+',');
+    fs.appendFileSync('nomes.json', `\n${JSON.stringify(cadastro)}`)
+    resultado = `Olá, ${nomeNoForm}`
+    res.render('result', { resultado })
 });
-
-
 
 app.listen(8080)
