@@ -11,19 +11,17 @@
 
 <body>
     <%- include ('cabeca')%>
+    <div class="titulo-doacao">
+        <h1>Doação</h1>
+        <h2>Selecione abaixo o valor que deseja doar ou indique o valor da sua doação.</h2>
+    </div>
     <form action="/result" method="post" class="form">
         <fieldset>
-            <legend>Selecione o valor que deseja doar:</legend>
-            
-            <label for="valor1">R$20,00<input type="radio" id="valor1" name="valor" value="20,00"></label>
-            <br>
-            <label for="valor2">R$50,00<input type="radio" id="valor2" name="valor" value="50,00"></label>
-            <br>
-            <label for="valor3">R$100,00<input type="radio" id="valor3" name="valor" value="100,00"></label>
-            <br>
-            <label for="outro">Outro valor:<br><input type="number" id="outro" name="outro"></label>
-            <br><br>
-            <input type="submit" id="1a20">
+            <label for="valor1" class="valor">R$20,00<input type="radio" id="valor1" name="valor" value="20,00"></label>
+            <label for="valor2" class="valor">R$50,00<input type="radio" id="valor2" name="valor" value="50,00"></label>
+            <label for="valor3" class="valor">R$100,00<input type="radio" id="valor3" name="valor" value="100,00"></label>
+            <label for="outro" class="valor">R$<input type="number" id="outro" name="outro" min="10" placeholder="10,00"></label>
+            <input type="submit" value="DOAR">
         </fieldset>
       </form>
     <%- include ('rodape')%>

@@ -7,14 +7,6 @@ app.get("/", (req, res) => {
     res.render('home')
 })
 
-app.get("/contato", (req, res) => {
-    res.render('contato')
-})
-
-app.get("/sobre", (req, res) => {
-    res.render('sobre')
-})
-
 app.get("/seca", (req, res) => {
     res.render('not1')
 })

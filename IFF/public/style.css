@@ -64,6 +64,24 @@ body {
     width: 100%;
 }
 
+.titulo-doacao {
+    background-color: #E9F8DD;
+    text-align: center;
+    text-decoration: none;
+    padding-top: 40px;
+    padding-left:25px;
+    padding-bottom: 40px;
+    display: block;
+    float: left;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.titulo-doacao h2 {
+    font-weight: 500;
+}
+
+
 .titulo p{
     font-size: 12pt;
     font-weight: 500;
@@ -170,21 +188,51 @@ body {
     padding: 0 10px 0 10px ;
 }
 
-.form label{
-    border: 1px solid #65b7bb;
-    border-radius: 5px;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    color: #65b7bb;
-    display: inline-block;
-    font-size: 18px;
-    font-weight: 700;
-    line-height: 55px;
-    margin-right: 5px;
-    margin-top: 2px;
-    min-height: 125px;
-    padding-left: 10px;
-    position: relative;
-    text-align: left;
-    width: 293px;
+.valor{
+    box-shadow: 0px 0px 12px #00000033;
+    border-radius: 8px;
+    width: 157px;
+    height: 87px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #D5D5D5;
+    margin: 35px;
+}
+
+fieldset {
+    margin: 350px 500px 225px 500px;
+    width: 1000px;
+    height: 250px;
+    border-radius: 20px;
+    align-content: center;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.form input[type="submit"]{
+    background-color: #93e046;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    border-radius: 20px;
+    font-weight: bolder;
+}
+
+input[type="number"] {
+    border: none;
+    height: 25px;
+    width: 100px;
+}
+
+label {
+    font-weight: bold;
+    font-size: 30px;
+}
+
+input[type="radio"] {
+    position: absolute;
+    opacity: 0;
 }
