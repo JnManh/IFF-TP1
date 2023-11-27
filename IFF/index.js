@@ -1,6 +1,10 @@
 const express = require('express')
 const app = express()
+const fs = require('fs')
 app.set("view engine","ejs")
+
+app.use(express.json())
+app.use(express.urlencoded({extended: true}))
 app.use(express.static('public'))
 
 app.get("/", (req, res) => {
@@ -20,14 +24,11 @@ app.get('/doacao', (req, res) => {
     res.render('doacao', { resultado })
 })
 
-app.post('/result', (req, res) => {
-    let nomeNoForm = req.body.nome
-    let cadastro = {nome: nomeNoForm}
-    console.log(cadastro);
-    console.log('\n'+JSON.stringify(cadastro)+',');
-    fs.appendFileSync('nomes.json', `\n${JSON.stringify(cadastro)}`)
-    resultado = `Olá, ${nomeNoForm}`
+
+app.post('/pedirDadosdoUsuario', (req, res) => {
+    let resultado = req.body.valor1 ?? req.body.valor2 ?? req.body.valor3 ?? req.body.valorEscolhido
     res.render('result', { resultado })
 });
+app.post('/salvar', (req,res)=> res.send('CHEGAMOS EM SALVAR'))
 
 app.listen(8080)

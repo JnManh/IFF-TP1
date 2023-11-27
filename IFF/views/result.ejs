@@ -4,8 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Doação</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <%- include ('cabeca')%>
+    <%= resultado %>
+    <div class="cadastro">  <form action="/salvar" method="post">
+  
+        <!-- DADOS PESSOAIS-->
+        <fieldset>
+        <legend>Dados Pessoais</legend>
+        <table cellspacing="30">
+        <tbody><tr>
+        <td>
+        <label for="nome">Nome completo: </label>
+        </td>
+            <td align="left">
+            <input type="text" name="nome" id="nome">
+        </td>
+        </tr>
+        <tr>
+        </tr>
+        <tr>
+        <td>
+            <label for="mail">E-mail: </label>
+        </td>
+        <td align="left">
+            <input type="email" name="email" size="30" maxlength="13" id="mail">
+        </td>
+        </tr> 
+        <tr>
+            </tr>    
+        </tbody></table>
+        <input type="submit" value="Enviar doação" id="1a20">
+        </fieldset></div>
+
+    <%- include ('rodape')%>
 </body>
 </html>
