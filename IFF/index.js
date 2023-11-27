@@ -29,6 +29,14 @@ app.post('/pedirDadosdoUsuario', (req, res) => {
     let resultado = req.body.valor1 ?? req.body.valor2 ?? req.body.valor3 ?? req.body.valorEscolhido
     res.render('result', { resultado })
 });
-app.post('/salvar', (req,res)=> res.send('CHEGAMOS EM SALVAR'))
 
+app.post('/salvar', (req, res) => {
+    dados = {
+        nome: req.body.nome,
+        Email: req.body.email,
+    }
+    fs.appendFileSync('usuario.json', `\n${JSON.stringify(dados)}`)
+    resultado = `Olá, ${dados}`
+    res.render('result', { resultado })
+})
 app.listen(8080)
