@@ -32,6 +32,7 @@ app.post('/pedirDadosdoUsuario', (req, res) => {
 
 app.post('/salvar', (req, res) => {
     dados = {
+        valor: resultado,
         nome: req.body.nome,
         Email: req.body.email,
     }
