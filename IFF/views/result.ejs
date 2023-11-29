@@ -8,7 +8,7 @@
 </head>
 <body>
     <%- include ('cabeca')%>
-    <%= resultado %>
+    
     <div class="cadastro">  <form action="/salvar" method="post">
   
         <fieldset>
@@ -23,6 +23,12 @@
         </td>
         </tr>
         <tr>
+            <td>
+            <label for="nome">Valor: </label>
+            </td>
+            <td align="left">
+                <input type="number" name="valor" id="valor" value="<%= resultado %>">
+            </td>            
         </tr>
         <tr>
         <td>

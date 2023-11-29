@@ -7,6 +7,10 @@ app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 app.use(express.static('public'))
 
+let vetorValor = []
+let vetorNome = []
+let vetorEmail = []
+
 app.get("/", (req, res) => {
     res.render('home')
 })
@@ -28,11 +32,12 @@ app.get('/doacao', (req, res) => {
 app.post('/pedirDadosdoUsuario', (req, res) => {
     let resultado = req.body.valor1 ?? req.body.valor2 ?? req.body.valor3 ?? req.body.valorEscolhido
     res.render('result', { resultado })
+    vetorValor.push(resultado)
+    fs.writeFileSync('usuario.json', JSON.stringify(vetorValor))
 });
 
 app.post('/salvar', (req, res) => {
     dados = {
-        valor: resultado,
         nome: req.body.nome,
         Email: req.body.email,
     }
@@ -40,4 +45,9 @@ app.post('/salvar', (req, res) => {
     resultado = `Olá, ${dados}`
     res.render('result', { resultado })
 })
+
+app.get('/mostrar', (req, res) => {
+    res.render('mostrar', { vetorValor })
+})
+
 app.listen(8080)

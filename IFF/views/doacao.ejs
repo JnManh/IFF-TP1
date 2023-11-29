@@ -7,6 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Notícias</title>
+    <script>
+        function test () {
+
+        }
+    </script>
 </head>
 
 <body>
@@ -15,16 +20,16 @@
         <h1>Doação</h1>
         <h2>Selecione abaixo o valor que deseja doar ou indique o valor da sua doação.</h2>
     </div>
-    <form action="/pedirDadosdoUsuario" method="post" class="form">
+    <form action="/pedirDadosdoUsuario" method="post" class="form" id="meuForm">
         <fieldset>
             <label for="valor">R$</label>
-            <button class="valor" name="valor" value="20,00">20,00</button>
+            <button class="valor" name="valor" onclick="atualiza(20)">20,00</button>
             <label for="valor">R$</label>
-            <button class="valor" name="valor" value="50,00">50,00</button>
+            <button class="valor" name="valor" onclick="atualiza(50)">50,00</button>
             <label for="valor">R$</label>
-            <button class="valor" name="valor" value= "100,00">100,00</button>
+            <button class="valor" name="valor" onclick="atualiza(100)">100,00</button>
             <label for="valor">R$</label>
-            <input type="text" class="valor" name="valorEscolhido" placeholder="Deseja doar outro valor?">
+            <input type="number" id="escolhido" class="valor" name="valorEscolhido" placeholder="Deseja doar outro valor?">
             <input type="submit" value="DOAR">
         </fieldset>
       </form>
