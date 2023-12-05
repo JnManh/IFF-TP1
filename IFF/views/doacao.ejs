@@ -7,11 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Notícias</title>
-    <script>
-        function test () {
-
-        }
-    </script>
 </head>
 
 <body>
@@ -22,17 +17,24 @@
     </div>
     <form action="/pedirDadosdoUsuario" method="post" class="form" id="meuForm">
         <fieldset>
-            <label for="valor">R$</label>
-            <button class="valor" name="valor" onclick="atualiza(20)">20,00</button>
-            <label for="valor">R$</label>
-            <button class="valor" name="valor" onclick="atualiza(50)">50,00</button>
-            <label for="valor">R$</label>
-            <button class="valor" name="valor" onclick="atualiza(100)">100,00</button>
-            <label for="valor">R$</label>
-            <input type="number" id="escolhido" class="valor" name="valorEscolhido" placeholder="Deseja doar outro valor?">
-            <input type="submit" value="DOAR">
+            <div class="valor1">
+                <label for="valor">R$</label>
+                <input type="number" class="valor" name="valor" min="1" placeholder="Deseja doar outro valor?" required>
+            </div>
+            <div class="valor2">
+                <label for="nome">Nome:</label>
+                <input type="text" name="nome" id="nome" class="valor" placeholder="Digite seu nome aqui" required>
+            </div>
+            <div class="valor2">
+                <label for="mail">E-mail: </label>
+                <input type="email" name="email" class="valor" size="30" maxlength="50" id="mail" placeholder="Digite seu email aqui" required>
+            </div>
+            <div class="buttons2">
+               <input type="submit"  value="DOAR"> 
+            </div>
+            
         </fieldset>
-      </form>
+    </form>
     <%- include ('rodape')%>
 </body>
 

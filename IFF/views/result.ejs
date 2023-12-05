@@ -5,46 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Doação</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            overflow-y: auto;
+        }
+    </style>
 </head>
 <body>
     <%- include ('cabeca')%>
-    
-    <div class="cadastro">  <form action="/salvar" method="post">
-  
-        <fieldset>
-        <legend>Dados Pessoais</legend>
-        <table cellspacing="30">
-        <tbody><tr>
-        <td>
-        <label for="nome">Nome completo: </label>
-        </td>
-            <td align="left">
-            <input type="text" name="nome" id="nome">
-        </td>
-        </tr>
-        <tr>
-            <td>
-            <label for="nome">Valor: </label>
-            </td>
-            <td align="left">
-                <input type="number" name="valor" id="valor" value="<%= resultado %>">
-            </td>            
-        </tr>
-        <tr>
-        <td>
-            <label for="mail">E-mail: </label>
-        </td>
-        <td align="left">
-            <input type="email" name="email" size="30" maxlength="13" id="mail">
-        </td>
-        </tr> 
-        <tr>
-            </tr>    
-        </tbody></table>
-        <input type="submit" value="Enviar doação" id="1a20">
-        </fieldset></div>
-        
+    <main class="tadoa">
+        <% for (let i = 0; i < vetorNomes.length; i++) { %>
+        <div class="teste">
+            <p class="mostrar"><%=vetorNomes[i]%></p>
+        </div>
+        <% } %>
+    </main>
     <%- include ('rodape')%>
-    <%= resultado%>
 </body>
 </html>

@@ -7,9 +7,7 @@ app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 app.use(express.static('public'))
 
-let vetorValor = []
-let vetorNome = []
-let vetorEmail = []
+let vetorNomes = []
 
 app.get("/", (req, res) => {
     res.render('home')
@@ -24,30 +22,24 @@ app.get("/moradores", (req, res) => {
 })
 
 app.get('/doacao', (req, res) => {
-    resultado = ""
-    res.render('doacao', { resultado })
+    resultado=''
+    res.render('doacao')
 })
 
-
 app.post('/pedirDadosdoUsuario', (req, res) => {
-    let resultado = req.body.valor1 ?? req.body.valor2 ?? req.body.valor3 ?? req.body.valorEscolhido
-    res.render('result', { resultado })
-    vetorValor.push(resultado)
-    fs.writeFileSync('usuario.json', JSON.stringify(vetorValor))
-});
-
-app.post('/salvar', (req, res) => {
-    dados = {
-        nome: req.body.nome,
-        Email: req.body.email,
-    }
-    fs.appendFileSync('usuario.json', `\n${JSON.stringify(dados)}`)
-    resultado = `Olá, ${dados}`
-    res.render('result', { resultado })
+    let nomeNoForm = req.body.nome
+    let valorNoForm = req.body.valor
+    let cadastro = `Obrigado ${nomeNoForm} por doar R$${valorNoForm}!`
+    console.log(cadastro);
+    console.log('\n'+JSON.stringify(cadastro)+',');
+    vetorNomes.push(cadastro)
+    fs.writeFileSync('usuario.json', JSON.stringify(vetorNomes))
+    res.redirect('/mostrar')
 })
 
 app.get('/mostrar', (req, res) => {
-    res.render('mostrar', { vetorValor })
+    content = JSON.parse(fs.readFileSync('usuario.json','utf8'))
+    res.render('result', { vetorNomes: content })
 })
 
 app.listen(8080)
